@@ -1,0 +1,11 @@
+{% extends "customers/base.html" %}
+{% block content %}
+<h1>Welcome to home page</h1>
+<div class="container">
+    {% if user.is_authenticated %}
+    <li><a href="{% url 'customer_list' %}">View Customer List</a></li>
+    <li><a href="{% url 'new_customer' %}">New Customer</a></li>
+    {% else %}
+    {% endif %}
+</div>
+{% endblock %}

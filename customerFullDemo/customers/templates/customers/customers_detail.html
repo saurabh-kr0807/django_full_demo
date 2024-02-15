@@ -1,0 +1,10 @@
+{% extends "posts/base.html" %}
+{% block content %}
+<div class="date taskdate">
+  <p class="taskcontent">First nasme:- {{ object.first_name}}</p>
+  <p class="taskcontent">Last name :- {{ object.last_name}}</p>
+  <p class="taskcontent">Date of Birth :- {{ object.date_of_birth}}</p>
+  <p class="taskcontent">Phone Number :- {{ object.phone_number}}</p>
+
+</div>
+{% endblock %}

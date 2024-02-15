@@ -1,0 +1,16 @@
+{% extends "customers/base.html" %}
+{% block content %}
+{% if user.is_authenticated %}
+ <li><a href="{% url 'new_customer' %}">New Customer</a></li>
+  {% for customer in customers %}
+    <div>
+        <h3> <p class="taskcontent">Fist Name :- {{customer.first_name}}</p></h3>
+    </div>
+      <p class="taskcontent">Last Name :- {{ customer.last_name}}</p>
+      <p class="taskcontent">DOB :- {{ customer.date_of_birth}}</p>
+      <p class="taskcontent">Phone Number :- {{ customer.phone_number}}</p>
+  {% endfor %}
+{% else %}
+<p>Please login the application</p>
+{% endif %}
+{% endblock %}

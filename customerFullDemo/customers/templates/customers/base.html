@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+  </head>
+  <body>
+    <div class="container">
+      <li><a class="navbar-brand bigbrand" href="{% url 'home' %}">Home</a></li>
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'logout' %}">logout</a></li>
+      <div class="user-name">
+        <p>User Name: {{user.username}}</p>
+      </div>
+
+        {% else %}
+        <li><a href="{% url 'signup' %}">Signup</a></li>
+        <li><a href="{% url 'login' %}">Login</a></li>
+        {% endif %}
+    </div>
+    <div class="content container">
+        <div class="row">
+                {% block content %}
+
+                {% endblock %}
+        </div>
+    </div>
+  </body>
+</html>
